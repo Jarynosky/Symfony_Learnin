@@ -1,0 +1,22 @@
+<h1>{{ title }}</h1>
+
+<div>
+
+    Mauris cursus justo vulputate ullamcorper congue. Sed facilisis nisl sed ex varius pretium. Donec dui nisi, pulvinar ac ligula eu, eleifend tempus felis. Fusce at ante sed diam interdum elementum. Quisque ligula nisi, eleifend eu laoreet id, tempor eget justo. Aliquam in diam diam. Sed id ante neque.
+
+</div>
+
+<div>
+</br>
+    Utwory:
+    <ul>
+        {% for track in tracks %}
+
+            <li>
+                {{ track.artist }} - {{ track.song }}
+            </li>
+
+        {% endfor %}
+    </ul>
+
+</div>
