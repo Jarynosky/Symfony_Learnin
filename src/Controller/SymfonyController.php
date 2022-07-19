@@ -23,17 +23,17 @@ class SymfonyController extends AbstractController
         ];
 
         return $this->render("symfony/homepage.html.twig",[
-           'title'=> 'Strona Glowna',
+           'title'=> 'Utwory do przesłuchania!',
             'tracks'=> $tracks,
         ]);
     }
     #[Route('/browse/{slug}')]
     public function browse(string $slug = null): Response {
-        if($slug){
-            $title = u(str_replace('-', ' ',$slug))->title(true);
-        }else{
-            $title = 'Dupa Dupa';
-        }
-        return new Response('browse browse browse: '.$title);
+
+        $genre = $slug ? u(str_replace('-', ' ', $slug))->title(true) :null;
+
+        return $this ->render('symfony/browse.html.twig', [
+            'genre' => $genre,
+        ]);
     }
 }
